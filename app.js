@@ -12,11 +12,6 @@ let todos = [
   { id: 4, taskName: "code", completed: "true" },
 ];
 
-// check the server
-app.get("/", function (req, res) {
-  res.send("Hello World!");
-});
-
 // crud
 // read  == get all the todos
 app.get("/todos", (req, res) => {
@@ -49,7 +44,7 @@ app.get("/todo_completed",(req,res) =>{
 
   if (completedTasks.length) {
     res.status(200);
-    res.json(found);
+    res.json(completedTasks);
   } else {
     res.status(404);
     res.json("there in no completed tasks");
